@@ -39,6 +39,15 @@
       "implicitDependencies": [
         "design-system"
       ]
+    },
+    "components": {
+      "tags": []
+    },
+    "components-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "components"
+      ]
     }
   }
 }
