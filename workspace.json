@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "projects": {
+    "design-system": {
+      "root": "apps/design-system",
+      "sourceRoot": "apps/design-system",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "apps/design-system",
+            "outputPath": "dist/apps/design-system"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "design-system:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "design-system:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "design-system:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/design-system/**/*.{ts,tsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/design-system/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "design-system-e2e": {
+      "root": "apps/design-system-e2e",
+      "sourceRoot": "apps/design-system-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/design-system-e2e/cypress.json",
+            "tsConfig": "apps/design-system-e2e/tsconfig.e2e.json",
+            "devServerTarget": "design-system:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "design-system:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/design-system-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "schematics": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "design-system"
+}
