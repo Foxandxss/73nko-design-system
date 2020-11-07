@@ -1,25 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ThemeProvider } from 'emotion-theming';
+
+import {
+  GlobalStyle,
+  darkTheme,
+  defaultTheme,
+} from '@73nko-design-system/utils';
+
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import { ReactComponent as NxLogo } from '../public/nx-logo-white.svg';
-import './styles.css';
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
+  const [useDarkTheme, setUseDarkTheme] = useState(false);
   return (
-    <>
-      <Head>
-        <title>Welcome to design-system!</title>
-      </Head>
-      <div className="app">
-        <header className="flex">
-          <NxLogo width="75" height="50" />
-          <h1>Welcome to design-system!</h1>
-        </header>
-        <main>
-          <Component {...pageProps} />
-        </main>
+    <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+      <button
+        style={{
+          margin: '0 16px 24px',
+          padding: '8px',
+          background: 'none',
+          cursor: 'pointer',
+          border: '2px solid #000',
+          marginTop: '60px',
+        }}
+        onClick={() => setUseDarkTheme(true)}
+      >
+        Dark theme
+      </button>
+      <button
+        style={{
+          margin: '0 16px 24px',
+          padding: '8px',
+          background: 'none',
+          cursor: 'pointer',
+          border: '2px solid #000',
+          marginTop: '60px',
+        }}
+        onClick={() => setUseDarkTheme(false)}
+      >
+        Default theme
+      </button>
+
+      <div
+        style={{
+          background: useDarkTheme
+            ? defaultTheme.primaryColor
+            : darkTheme.primaryColor,
+          width: '100vw',
+          height: '90vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+        }}
+      >
+        <GlobalStyle />
+
+        <Component {...pageProps} />
       </div>
-    </>
+    </ThemeProvider>
   );
 };
 

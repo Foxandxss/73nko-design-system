@@ -39,9 +39,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/design-system/**/*.{ts,tsx}"
-            ]
+            "lintFilePatterns": ["apps/design-system/**/*.{ts,tsx}"]
           }
         },
         "test": {
@@ -74,9 +72,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/design-system-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/design-system-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -90,9 +86,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/components/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/components/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
@@ -155,9 +149,28 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/components-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/components-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "utils": {
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/utils/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

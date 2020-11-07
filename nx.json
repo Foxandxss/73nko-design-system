@@ -19,12 +19,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "ZTBhMTJjZDEtYzg5Ni00ZGYzLWE1OTMtNzUxNzU1Nzk0MWM2fHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -36,18 +31,17 @@
     },
     "design-system-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "design-system"
-      ]
+      "implicitDependencies": ["design-system"]
     },
     "components": {
       "tags": []
     },
     "components-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "components"
-      ]
+      "implicitDependencies": ["components", "design-system"]
+    },
+    "utils": {
+      "tags": []
     }
   }
 }

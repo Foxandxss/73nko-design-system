@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@73nko-design-system/components": ["libs/components/src/index.ts"]
+      "@73nko-design-system/components": ["libs/components/src/index.ts"],
+      "@73nko-design-system/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
