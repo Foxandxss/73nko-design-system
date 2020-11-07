@@ -2,6 +2,13 @@
   "name": "73nko-design-system",
   "version": "0.0.0",
   "license": "MIT",
+  "description": "Design system and components gallery built in storybook and NextJs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/73nko/73nko-design-system"
+  },
+  "homepage": "https://github.com/73nko/73nko-design-system#readme",
+  "author": "73nko <apramos89@gmail.com>",
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
