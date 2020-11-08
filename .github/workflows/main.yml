@@ -19,7 +19,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm ci
+          npm lint
           npm test
-          npm run e2e
+          npm e2e
         env:
           CI: true
