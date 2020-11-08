@@ -52,7 +52,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
           justifyContent: 'space-around',
         }}
       >
-        <GlobalStyle />
+        <GlobalStyle styles={{}} />
 
         <Component {...pageProps} />
       </div>

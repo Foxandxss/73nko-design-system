@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/design-system',
     '<rootDir>/libs/components',
     '<rootDir>/libs/utils',
+    '<rootDir>/libs/types',
   ],
 };

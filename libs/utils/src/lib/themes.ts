@@ -1,7 +1,9 @@
 import { blue, neutral, pink, yellow, green, red } from './colors';
 import { primaryFont } from './typography';
 
-export const defaultTheme = {
+import { Itheme } from '@73nko-design-system/types';
+
+export const defaultTheme: Itheme = {
   primaryColor: blue[300],
   primaryColorHover: blue[200],
   primaryColorActive: blue[100],
@@ -20,6 +22,7 @@ export const defaultTheme = {
 
   primaryFont,
   disabled: neutral[400],
+  textOnDisabled: neutral[300],
 
   status: {
     warningColor: yellow[100],
@@ -34,10 +37,10 @@ export const defaultTheme = {
   },
 };
 
-export const darkTheme = {
+export const darkTheme: Itheme = {
   primaryColor: neutral[100],
-  primaryHoverColor: neutral[200],
-  primaryActiveColor: neutral[300],
+  primaryColorHover: neutral[200],
+  primaryColorActive: neutral[300],
 
   textColorOnPrimary: blue[300],
   textColor: blue[300],
