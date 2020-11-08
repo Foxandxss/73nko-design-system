@@ -11,7 +11,10 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -21,6 +24,6 @@ jobs:
           npm ci
           npm run lint
           npm test
-          npm run affected:e2e
+          npm run affected:e2e -- --base=origin/master
         env:
           CI: true
