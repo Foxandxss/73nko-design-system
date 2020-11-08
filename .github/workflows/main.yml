@@ -21,6 +21,6 @@ jobs:
           npm ci
           npm run lint
           npm test
-          npm run affected:e2e
+          npm run affected:e2e --all
         env:
           CI: true

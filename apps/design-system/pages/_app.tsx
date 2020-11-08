@@ -13,6 +13,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+      <h1>Welcome to design-system!</h1>
       <button
         style={{
           margin: '0 16px 24px',
